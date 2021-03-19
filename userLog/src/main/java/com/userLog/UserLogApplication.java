@@ -1,13 +1,13 @@
-package com.login;
+package com.userLog;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class FitnessProjectApplication {
+public class UserLogApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(FitnessProjectApplication.class, args);
+		SpringApplication.run(UserLogApplication.class, args);
 	}
 
 }

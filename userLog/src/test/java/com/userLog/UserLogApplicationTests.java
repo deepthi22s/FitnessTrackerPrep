@@ -1,10 +1,10 @@
-package com.ibm.training;
+package com.userLog;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class FitnessProjectApplicationTests {
+class UserLogApplicationTests {
 
 	@Test
 	void contextLoads() {
