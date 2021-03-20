@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
+<<<<<<< HEAD
 import {render} from 'creditcardpayments/creditCardPayments';
+=======
+>>>>>>> 59f2089 (initial commit)
 
 @Component({
   selector: 'app-root',
@@ -7,6 +10,7 @@ import {render} from 'creditcardpayments/creditCardPayments';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+<<<<<<< HEAD
   title = 'WorkoutTrackerUi';
 
   constructor(){
@@ -22,4 +26,7 @@ export class AppComponent {
       }
     );
   }
+=======
+  title = 'WorkoutAngular';
+>>>>>>> 59f2089 (initial commit)
 }
