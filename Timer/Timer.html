@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		
+		<title>Timer</title>
+	</head>
+	<body>
+	<style type="text/css">
+		
+		#work {
+			    grid-area: 1 / 2 / 1 / 2;
+			}
+			
+		.timer {
+			    display: flex;
+			    align-self: center;
+			    justify-self: center;
+			
+			    font-size: 30px;
+			    font-weight: bold;
+			}
+		.workout{
+			font-size: 20px;
+			font-style: italic;
+		}
+		
+	</style>
+
+    <h1>Timer</h1>
+		    <div id="container">
+		    	<div>
+					Workout: &nbsp; &nbsp; &nbsp; &nbsp;<input type="text" id="name" >&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Time: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<input type="number" id="mins" >
+			    </div>
+
+			     <button id="count" onclick="initialize()">Count</button>
+			    
+			     <p id="workout"></p>
+			    <div id="work-timer" class="timer">
+			    	<p id="minutes">00</p><p class="semicolon">:</p><p id="seconds">00</p>
+		        </div>
+		
+		        <button id="start" class="btn">Start</button>
+		        <button id="stop" class="btn">Pause</button>
+		        <button id="reset" class="btn">Reset</button>
+		    </div>
+	    <script src="Timer.js"></script>
+	</body>
+</html>

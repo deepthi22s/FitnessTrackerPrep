@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 1465fa795e2b6e33bbaffde3516c457945749212
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
@@ -18,6 +21,7 @@ import { VideostreamComponent } from './videostream/videostream.component';
   imports: [
     BrowserModule,
     AppRoutingModule
+<<<<<<< HEAD
 =======
 
 import { AppComponent } from './app.component';
@@ -29,6 +33,8 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule
 >>>>>>> 59f2089 (initial commit)
+=======
+>>>>>>> 1465fa795e2b6e33bbaffde3516c457945749212
   ],
   providers: [],
   bootstrap: [AppComponent]

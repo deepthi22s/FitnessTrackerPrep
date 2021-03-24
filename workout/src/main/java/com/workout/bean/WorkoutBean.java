@@ -11,6 +11,10 @@ import org.springframework.stereotype.Component;
 public class WorkoutBean {
 	@Id
 	String workoutName;
+	String workoutDescription;
+	String workoutImage;
+	String workoutVideo;
+	Integer AverageCalorieBurn;
 	public String getWorkoutName() {
 		return workoutName;
 	}
@@ -35,32 +39,12 @@ public class WorkoutBean {
 	public void setWorkoutVideo(String workoutVideo) {
 		this.workoutVideo = workoutVideo;
 	}
-	public Double getAverageCalorieBurn() {
+	public Integer getAverageCalorieBurn() {
 		return AverageCalorieBurn;
 	}
-	public void setAverageCalorieBurn(Double averageCalorieBurn) {
+	public void setAverageCalorieBurn(Integer averageCalorieBurn) {
 		AverageCalorieBurn = averageCalorieBurn;
 	}
-	public Double getWorkoutTime() {
-		return WorkoutTime;
-	}
-	public void setWorkoutTime(Double workoutTime) {
-		WorkoutTime = workoutTime;
-	}
-	public Double getCaloriesBurnedByUser() {
-		return CaloriesBurnedByUser;
-	}
-	public void setCaloriesBurnedByUser(Double caloriesBurnedByUser) {
-		CaloriesBurnedByUser = caloriesBurnedByUser;
-	}
-	String workoutDescription;
-	String workoutImage;
-	String workoutVideo;
-	Double AverageCalorieBurn;
-	Double WorkoutTime;
-	@Transient  //Not to be included in table
-	Double CaloriesBurnedByUser;
+		
 	
-	
-
 }
