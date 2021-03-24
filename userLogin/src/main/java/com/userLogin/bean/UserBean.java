@@ -10,6 +10,7 @@ import javax.persistence.Id;
 import org.springframework.stereotype.Component;
 @Entity
 @Component
+
 public class UserBean {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -20,6 +21,7 @@ public class UserBean {
 	Integer height;
 	Integer weight;
 	Integer bmi;
+
 	Integer yearsOfSubscription;
 	public Integer getYearsOfSubscription() {
 		return yearsOfSubscription;
@@ -27,6 +29,7 @@ public class UserBean {
 	public void setYearsOfSubscription(Integer yearsOfSubscription) {
 		this.yearsOfSubscription = yearsOfSubscription;
 	}
+
 	public String getFullName() {
 		return fullName;
 	}

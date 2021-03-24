@@ -1,15 +1,23 @@
 package com.userLogin.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.AutoConfigurationPackage;
+import org.springframework.web.bind.annotation.PostMapping;
+
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.userLogin.bean.UserBean;
 import com.userLogin.service.UserService;
+
+
 
 
 	
@@ -26,6 +34,7 @@ import com.userLogin.service.UserService;
 		service.create(bean);
 		
 	}
+
 	@PutMapping("/user/{edit}")
 	public void update(@RequestBody UserBean bean,@PathVariable int id) {
 	service.update(bean,id);
@@ -36,5 +45,6 @@ import com.userLogin.service.UserService;
 	List<UserBean> getDeatilsByName(@PathVariable String name){
      return service.getDeatilsByname(name);
 }
+
 	}
 
