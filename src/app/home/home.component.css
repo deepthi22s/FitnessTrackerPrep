@@ -1,4 +1,4 @@
-/* .topnav {
+.topnav {
     overflow: hidden;
     background-color: black;
     height : 50px;
@@ -19,4 +19,4 @@
   .topnav a:hover {
     background-color: #fff;
     color: grey;
-  } */
+  }
