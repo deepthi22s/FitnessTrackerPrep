@@ -14,7 +14,11 @@ export class AppComponent {
       {
         id :"#myPaypalButtons",
         currency :"INR",
+
+        value : "100",
+
         value : "1",
+ main
         onApprove: (details) => {
           alert("Transaction Successful");
 
