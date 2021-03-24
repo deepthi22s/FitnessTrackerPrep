@@ -1,5 +1,7 @@
 package com.workout.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,5 +19,9 @@ public class WorkoutService {
 	
 	public void create(WorkoutBean workouts) {
 		repo.save(workouts);
+	}
+
+	public List<String> getWorkouts() {
+		return (List<String>) repo.getWorkoutName();
 	}
 }
