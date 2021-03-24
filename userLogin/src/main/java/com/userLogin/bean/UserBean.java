@@ -18,8 +18,8 @@ public class UserBean {
 	Integer phoneNumber;
 	String password;
 	Integer height;
-	Integer weight;
-	Integer bmi;
+	Double weight;
+	Double bmi;
 	Integer yearsOfSubscription;
 	public Integer getYearsOfSubscription() {
 		return yearsOfSubscription;
@@ -45,22 +45,11 @@ public class UserBean {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public Integer getHeight() {
-		return height;
-	}
-	public void setHeight(Integer height) {
-		this.height = height;
-	}
-	public Integer getWeight() {
-		return weight;
-	}
-	public void setWeight(Integer weight) {
-		this.weight = weight;
-	}
-	public Integer getBmi() {
+	
+	public Double getBmi() {
 		return bmi;
 	}
-	public void setBmi(Integer bmi) {
+	public void setBmi(Double bmi) {
 		this.bmi = bmi;
 	}
 	public Integer getId() {
@@ -68,6 +57,18 @@ public class UserBean {
 	}
 	public void setId(Integer id) {
 		this.id = id;
+	}
+	public Integer getHeight() {
+		return height;
+	}
+	public void setHeight(Integer height) {
+		this.height = height;
+	}
+	public Double getWeight() {
+		return weight;
+	}
+	public void setWeight(Double weight) {
+		this.weight = weight;
 	}
 }
 
