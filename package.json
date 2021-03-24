@@ -22,11 +22,17 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
     "creditcardpayments": "^1.0.3",
+<<<<<<< HEAD
 =======
 >>>>>>> 59f2089 (initial commit)
 =======
     "creditcardpayments": "^1.0.3",
 >>>>>>> 1465fa795e2b6e33bbaffde3516c457945749212
+=======
+    "bootstrap": "^4.6.0",
+    "creditcardpayments": "^1.0.3",
+    "ngx-bootstrap": "^6.2.0",
+>>>>>>> b15974491618d3330f364af64020c44b75c2978b
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.3"
