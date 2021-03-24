@@ -17,6 +17,11 @@
   margin: 4px 2px;
   cursor: pointer;
   position: relative;
+
+  cursor: pointer;
+  position: relative;
+ 
+
     
   }
   .btn-secondary:hover {
