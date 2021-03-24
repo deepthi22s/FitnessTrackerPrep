@@ -7,6 +7,10 @@ import { PaymentComponent } from './payment/payment.component';
 import { VideostreamComponent } from './videostream/videostream.component';
 
 import { DietplanComponent } from './dietplan/dietplan.component';
+import { FormsModule } from '@angular/forms';
+import { ModalComponent } from './modal/modal.component';
+import { DialogComponent } from './dialog/dialog.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -14,11 +18,15 @@ import { DietplanComponent } from './dietplan/dietplan.component';
     AppComponent,
     PaymentComponent,
     VideostreamComponent,
-    DietplanComponent
+    DietplanComponent,
+    ModalComponent,
+    DialogComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

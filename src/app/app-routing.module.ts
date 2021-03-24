@@ -4,6 +4,7 @@ import { VideostreamComponent } from './videostream/videostream.component';
 import { PaymentComponent } from './payment/payment.component';
 import { DietplanComponent } from './dietplan/dietplan.component';
 import { AppComponent } from './app.component';
+import { ModalComponent } from './modal/modal.component';
 
 
 
@@ -14,7 +15,9 @@ const routes: Routes = [
   {path : '*', component: AppComponent},
   {path :'payment', component : PaymentComponent},
   {path : 'videostream', component : VideostreamComponent},
-  {path : 'dietplan' , component : DietplanComponent}
+  {path : 'dietplan' , component : DietplanComponent},
+  {path : 'modal', component : ModalComponent}
+  
 
 ];
 
