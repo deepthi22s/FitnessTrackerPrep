@@ -1,5 +1,4 @@
-package com.userLogin.bean;
-
+package com.userLog.bean;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -21,15 +20,6 @@ public class UserBean {
 	Integer height;
 	Integer weight;
 	Integer bmi;
-
-	Integer yearsOfSubscription;
-	public Integer getYearsOfSubscription() {
-		return yearsOfSubscription;
-	}
-	public void setYearsOfSubscription(Integer yearsOfSubscription) {
-		this.yearsOfSubscription = yearsOfSubscription;
-	}
-
 	public String getFullName() {
 		return fullName;
 	}
