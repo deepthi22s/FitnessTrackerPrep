@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { DialogComponent } from './dialog.component';
-import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
