@@ -1,0 +1,44 @@
+
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<div class="sidenav">
+    <div class="login-main-text">
+       <h2>FitnessTracker<br> Login Page</h2>
+       <p>DON'T WISH FOR A GOOD BODY.WORK FOR IT</p>
+    </div>
+ </div>
+ <div class="main">
+    <div class="col-md-6 col-sm-12">
+       <div class="login-form">
+                <label>FullName </label><br>
+                <form>
+                    <div class="form-group">
+<input type="text" 
+id="fullNameUser"
+placeholder="FullName" 
+ngModel name="fullNameUser" 
+#fullNameUser="ngModel"
+required 
+ minlength="3"><br>
+    <div class="alert alert-danger" *ngIf="fullNameUser.touched && ! fullNameUser.valid">
+    <div *ngIf="fullNameUser.errors?.required">*required</div>
+ <div *ngIf="fullNameUser.errors?.minlength">Name should be atleast of 3 in length</div>
+ </div>
+<label>Password</label><br>
+<input type="text" placeholder="Password"
+ngModel name="newPassword"
+#newPassword="ngModel"
+required 
+><br>
+<div class="alert alert-danger" *ngIf="newPassword.touched && ! newPassword.valid">
+<div *ngIf="newPassword.errors?.required">*required</div>
+</div>
+<br>
+<button (click)="getUser()"class="btn btn-black">Submit</button>
+<button type="submit" class="btn btn-secondary">Register</button>
+            </div>
+
+<p>{{result}}</p>
