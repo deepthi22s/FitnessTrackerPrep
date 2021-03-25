@@ -16,8 +16,7 @@ export class ModalComponent implements OnInit {
 
   title = 'Modal';
   responseDataFromWorkoutBean: any;
-  //responseDataFromWorkoutBean: any;
-
+  
   ngOnInit(){
 
   }
