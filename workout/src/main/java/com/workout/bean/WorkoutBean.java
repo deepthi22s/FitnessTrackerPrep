@@ -12,8 +12,6 @@ public class WorkoutBean {
 	@Id
 	String workoutName;
 	String workoutDescription;
-	String workoutImage;
-	String workoutVideo;
 	Integer AverageCalorieBurn;
 	public String getWorkoutName() {
 		return workoutName;
@@ -27,18 +25,7 @@ public class WorkoutBean {
 	public void setWorkoutDescription(String workoutDescription) {
 		this.workoutDescription = workoutDescription;
 	}
-	public String getWorkoutImage() {
-		return workoutImage;
-	}
-	public void setWorkoutImage(String workoutImage) {
-		this.workoutImage = workoutImage;
-	}
-	public String getWorkoutVideo() {
-		return workoutVideo;
-	}
-	public void setWorkoutVideo(String workoutVideo) {
-		this.workoutVideo = workoutVideo;
-	}
+	
 	public Integer getAverageCalorieBurn() {
 		return AverageCalorieBurn;
 	}

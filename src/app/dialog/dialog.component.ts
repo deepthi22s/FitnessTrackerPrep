@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, SimpleChange } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
@@ -35,23 +36,12 @@ export class DialogComponent implements OnInit {
             //console.log(this.startTimer);
         }
 
-        // count(){
-            
-        // //console.log(this.minutes);
-        // // console.log(this.minutes);
-        // // console.log("console..");
-        // // console.log(this.seconds);
-        // // this.startTimer=0;
-        // // console.log("HTML..");
-      
-        // }
-
       start(){
           if(this.startTimer === 0){
                 console.log("startTimer..");
                 //console.log(this.startTimer);
                 
-              this.startTimer = setInterval(this.timer(this.minutes, this.seconds),1000)
+              this.startTimer = setInterval(()=>{this.timer(this.minutes, this.seconds);},1000)
               
           } else {
               alert("Timer is already running");
@@ -71,31 +61,29 @@ export class DialogComponent implements OnInit {
             this.startTimer = 0;
         }
 
-        timer(minute: number, second : number) : any {
-              console.log(minute);
-              console.log(second);
-              console.log(this.startTimer);
-            
+        timer(minute: number, second : number) : any{
+              // console.log(minute);
+              // console.log(second);
+              //console.log(this.startTimer);
               // console.log("TIMER...");
                 if(second != 0){
                   second--;
                 this.seconds=second;
-                console.log("timer..."+this.seconds);
+                // console.log("timer..."+this.seconds);
             } else if(minute != 0 && second == 0){
-              //console.log("timer1..."+this.minutes);
-              second=59;
+                second=59;
                 this.seconds = second;
-              // console.log(this.seconds);
                 this.minutes=--minute;
             }
               
             if(this.minutes == 0 && this.seconds== 0 ){  
             this.minutes=0;
             this.seconds=0;
+            //alert("Woohooooo...... Workout Finished :) :)");
             clearInterval(this.startTimer);
-            alert("Woohooooo...... Workout Finished :) :)");
+            
               }
-
+            return this.startTimer=0;  
         }
 
         stopInterval(){
