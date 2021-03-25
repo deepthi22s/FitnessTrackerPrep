@@ -27,6 +27,7 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 		
+
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
@@ -52,6 +53,16 @@
 				<version>${spring-cloud.version}</version>
 				<type>pom</type>
 				<scope>import</scope>
+			</dependency>
+			
+			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-core</artifactId>
+			</dependency>
+			
+			<dependency>
+   				 <groupId>org.hibernate</groupId>
+    			 <artifactId>hibernate-entitymanager</artifactId>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
