@@ -1,13 +1,13 @@
-package com.userLogin.bean;
-
+package com.workout.bean;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-
 import org.springframework.stereotype.Component;
+
+
 @Entity
 @Component
 public class UserBean {
@@ -18,15 +18,17 @@ public class UserBean {
 	Integer phoneNumber;
 	String password;
 	Integer height;
-	Double weight;
-	Double bmi;
-	Integer yearsOfSubscription;
-	public Integer getYearsOfSubscription() {
-		return yearsOfSubscription;
+	Integer weight;
+	Integer bmi;
+	
+	public UserBean(){
+		
 	}
-	public void setYearsOfSubscription(Integer yearsOfSubscription) {
-		this.yearsOfSubscription = yearsOfSubscription;
+	
+	public UserBean(Integer id) {
+		this.id = id;
 	}
+
 	public String getFullName() {
 		return fullName;
 	}
@@ -45,11 +47,22 @@ public class UserBean {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
-	public Double getBmi() {
+	public Integer getHeight() {
+		return height;
+	}
+	public void setHeight(Integer height) {
+		this.height = height;
+	}
+	public Integer getWeight() {
+		return weight;
+	}
+	public void setWeight(Integer weight) {
+		this.weight = weight;
+	}
+	public Integer getBmi() {
 		return bmi;
 	}
-	public void setBmi(Double bmi) {
+	public void setBmi(Integer bmi) {
 		this.bmi = bmi;
 	}
 	public Integer getId() {
@@ -58,21 +71,4 @@ public class UserBean {
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	public Integer getHeight() {
-		return height;
-	}
-	public void setHeight(Integer height) {
-		this.height = height;
-	}
-	public Double getWeight() {
-		return weight;
-	}
-	public void setWeight(Double weight) {
-		this.weight = weight;
-	}
 }
-
-	
-	
-
-	
