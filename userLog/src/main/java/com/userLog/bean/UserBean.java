@@ -44,6 +44,13 @@ public class UserBean {
 	public void setHeight(Integer height) {
 		this.height = height;
 	}
+	public UserBean() {
+		
+	}
+	public UserBean(Integer id) {
+		super();
+		this.id = id;
+	}
 	public Integer getWeight() {
 		return weight;
 	}

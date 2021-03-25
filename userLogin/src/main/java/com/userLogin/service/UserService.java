@@ -16,17 +16,11 @@ public class UserService {
 
  @Autowired
  UserRepo repo;
- 
-  public void create(UserBean userbean) {
-	 repo.save(userbean);
-  }
- @Autowired
- UserRepo repo;
- 
   public void create(UserBean bean) {
 	 repo.save(bean);
  }
    public void update(UserBean bean,int id) {
+	   bean.setId(id);
 	 repo.save(bean);
  }
   public List<UserBean> getDeatilsByname(String username) {

@@ -35,7 +35,7 @@ import com.userLogin.service.UserService;
 		
 	}
 
-	@PutMapping("/user/{edit}")
+	@PutMapping("/user/{id}")
 	public void update(@RequestBody UserBean bean,@PathVariable int id) {
 	service.update(bean,id);
 	
