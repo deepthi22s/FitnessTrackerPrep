@@ -1,11 +1,26 @@
 package com.userLog.repo;
 
+import java.util.Date;
+import java.util.List;
+
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 import com.userLog.bean.LogBean;
 
-@Repository
-public interface LogRepo extends CrudRepository<LogBean, Integer> {
 
-}
+@Repository
+@EnableJpaRepositories
+public interface LogRepo extends CrudRepository<LogBean, Integer> {
+	
+
+	List<LogBean> findByUserId(Integer userId);
+
+	List<LogBean> findByUserWorkoutId(Integer userWorkoutId);
+
+	List<LogBean> findByStart(Date start);
+
+//	 findByUserId(Integer userId);
+	
+} 

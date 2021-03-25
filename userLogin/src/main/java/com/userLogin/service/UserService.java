@@ -1,4 +1,5 @@
 package com.userLogin.service;
+
 import java.util.List;
 import java.util.Optional;
 
@@ -11,9 +12,11 @@ import com.userLogin.repo.UserRepo;
 
 @Service
 public class UserService {
-	
+
+
  @Autowired
  UserRepo repo;
+
  
   public void create(UserBean user) {
 	 Integer h= user.getHeight();
@@ -24,13 +27,15 @@ public class UserService {
 	 repo.save(user);
 	  }
   
+
    public void update(UserBean bean,int id) {
+	   bean.setId(id);
 	 repo.save(bean);
  }
   public List<UserBean> getDeatilsByname(String username) {
 	 return (List<UserBean>) repo.findByFullName(username);
 }
-    
+
 }
 
 

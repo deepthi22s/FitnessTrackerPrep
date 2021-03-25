@@ -2,8 +2,11 @@ package com.workout.bean;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 import javax.persistence.Transient;
 
+import org.hibernate.annotations.Formula;
 import org.springframework.stereotype.Component;
 
 @Entity
@@ -11,6 +14,19 @@ import org.springframework.stereotype.Component;
 public class WorkoutBean {
 	@Id
 	String workoutName;
+	String workoutDescription;
+	Integer averageCalorieBurn;		
+	
+	
+	public WorkoutBean() {
+		
+	}
+	public WorkoutBean(String workoutName) {		
+		this.workoutName = workoutName;
+	}
+	
+	
+	
 	public String getWorkoutName() {
 		return workoutName;
 	}
@@ -23,44 +39,10 @@ public class WorkoutBean {
 	public void setWorkoutDescription(String workoutDescription) {
 		this.workoutDescription = workoutDescription;
 	}
-	public String getWorkoutImage() {
-		return workoutImage;
+	public Integer getAverageCalorieBurn() {
+		return averageCalorieBurn;
 	}
-	public void setWorkoutImage(String workoutImage) {
-		this.workoutImage = workoutImage;
+	public void setAverageCalorieBurn(Integer averageCalorieBurn) {
+		this.averageCalorieBurn = averageCalorieBurn;
 	}
-	public String getWorkoutVideo() {
-		return workoutVideo;
-	}
-	public void setWorkoutVideo(String workoutVideo) {
-		this.workoutVideo = workoutVideo;
-	}
-	public Double getAverageCalorieBurn() {
-		return AverageCalorieBurn;
-	}
-	public void setAverageCalorieBurn(Double averageCalorieBurn) {
-		AverageCalorieBurn = averageCalorieBurn;
-	}
-	public Double getWorkoutTime() {
-		return WorkoutTime;
-	}
-	public void setWorkoutTime(Double workoutTime) {
-		WorkoutTime = workoutTime;
-	}
-	public Double getCaloriesBurnedByUser() {
-		return CaloriesBurnedByUser;
-	}
-	public void setCaloriesBurnedByUser(Double caloriesBurnedByUser) {
-		CaloriesBurnedByUser = caloriesBurnedByUser;
-	}
-	String workoutDescription;
-	String workoutImage;
-	String workoutVideo;
-	Double AverageCalorieBurn;
-	Double WorkoutTime;
-	@Transient  //Not to be included in table
-	Double CaloriesBurnedByUser;
-	
-	
-
 }

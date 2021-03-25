@@ -1,0 +1,3 @@
+<input type="text" placeholder="Workout Name" [(ngModel)] = "workoutName" (change)="displayName(workoutName)" />
+<input type="number" placeholder="Time to workout" [(ngModel)] = "workoutTime" (change)="displayTime(workoutTime)" />
+<button class='btn btn-primary' (click)="showDialog()">Show Timer</button>

@@ -1,5 +1,8 @@
 package com.ibm.pro.service;
 
+import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,6 +20,20 @@ public class WorkoutTimeService {
 	public void create(WorkoutTime workout) {
 		repo.save(workout);
 	}
+//	Fetch all
+	public List<WorkoutTime> getAllUsers(){
+		return (List<WorkoutTime>) repo.findAll();
+	}
 	
+//	Fetch by user name
+	public List<WorkoutTime> getUser(String name) {
+		return (List<WorkoutTime>) repo.findByUserName(name);
+	}
+
+//	Fetch by workout name
+	public List<WorkoutTime> getWorkout(String workout) {
+		return (List<WorkoutTime>) repo.findByWorkoutName(workout);
+	}
+
 }
 
