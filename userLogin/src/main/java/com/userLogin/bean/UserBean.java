@@ -1,15 +1,80 @@
 package com.userLogin.bean;
 
 
-
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-import org.hibernate.annotations.Entity;
+
 import org.springframework.stereotype.Component;
 @Entity
 @Component
+
 public class UserBean {
 	@Id
-	String Name;
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	Integer id;
+	String fullName;
+	Integer phoneNumber;
+	String password;
+	Integer height;
+	Integer weight;
+	Integer bmi;
 
+	Integer yearsOfSubscription;
+	public Integer getYearsOfSubscription() {
+		return yearsOfSubscription;
+	}
+	public void setYearsOfSubscription(Integer yearsOfSubscription) {
+		this.yearsOfSubscription = yearsOfSubscription;
+	}
+
+	public String getFullName() {
+		return fullName;
+	}
+	public void setFullName(String fullName) {
+		this.fullName = fullName;
+	}
+	public Integer getPhoneNumber() {
+		return phoneNumber;
+	}
+	public void setPhoneNumber(Integer phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	public Integer getHeight() {
+		return height;
+	}
+	public void setHeight(Integer height) {
+		this.height = height;
+	}
+	public Integer getWeight() {
+		return weight;
+	}
+	public void setWeight(Integer weight) {
+		this.weight = weight;
+	}
+	public Integer getBmi() {
+		return bmi;
+	}
+	public void setBmi(Integer bmi) {
+		this.bmi = bmi;
+	}
+	public Integer getId() {
+		return id;
+	}
+	public void setId(Integer id) {
+		this.id = id;
+	}
 }
+
+	
+	
+
+	

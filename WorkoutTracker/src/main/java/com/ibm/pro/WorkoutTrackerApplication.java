@@ -7,8 +7,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class WorkoutTrackerApplication {
 
 	public static void main(String[] args) {
+		System.out.println("Welcome..");
 		SpringApplication.run(WorkoutTrackerApplication.class, args);
-		//Testing 
+		
 	}
 
 }
