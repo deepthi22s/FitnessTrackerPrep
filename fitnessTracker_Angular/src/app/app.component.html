@@ -1,18 +1,10 @@
-
-
-<body>
-	<div class="topnav">
-  <a href="http://localhost:4200/">HOME</a>
-  <a href="http://localhost:4200/login">LOGIN</a>
-  <a href="http://localhost:4200/videostream">VIDEOS</a>
-  <a href ="http://localhost:4200/dietplan">DIET PLAN</a>
-  <a href="http://localhost:4200/payment">PAYMENT</a>
-  <a href="http://localhost:4200/modal">MODAL</a>
-<<<<<<< HEAD
-  <a href="http://localhost:4200/workout">Workout</a>
-=======
-  <a href="http://localhost:4200/signup">SIGN UP</a>
->>>>>>> 4b1bc7f0454e591a7303640ee92b578c904cc409
-</div>
-
-<router-outlet></router-outlet>
+<div>
+  <h1>Hello and Welcome to Workout Page</h1>
+  
+  <h2>Please Choose your action to perform operation on Workout table</h2>
+  
+  <a routerLink = "show">Show</a><br>
+  <a routerLink = "workoutOfUser">WorkoutOfUser</a><br>
+ <!-- // <a routerLink = "createWorkoutForUser">CreateWorkoutForUser</a><br> -->
+  <router-outlet></router-outlet>
+  </div>
