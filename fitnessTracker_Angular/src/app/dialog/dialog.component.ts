@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, SimpleChange } from '@angular/core';
-import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbActiveModal, NgbTimepickerI18n } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-dialog',
@@ -36,20 +36,30 @@ export class DialogComponent implements OnInit {
             //console.log(this.startTimer);
         }
 
-      start(){
-          if(this.startTimer === 0){
-                console.log("startTimer..");
-                //console.log(this.startTimer);
-                
-              this.startTimer = setInterval(()=>{this.timer(this.minutes, this.seconds);},1000)
-              
-          } else {
-              alert("Timer is already running");
-          }
-      }
+        // count(){
+            
+        // //console.log(this.minutes);
+        // // console.log(this.minutes);
+        // // console.log("console..");
+        // // console.log(this.seconds);
+        // // this.startTimer=0;
+        // // console.log("HTML..");
+      
+        // }
+
+    start(){
+        if(this.startTimer == 0){
+              console.log("startTimer..");
+              //console.log(this.startTimer);
+              this.startTimer = setInterval(()=>{this.timer(this.minutes, this.seconds);},1000)  
+        } else {
+            alert("Timer is already running");
+        }
+    }
 
         pause(){
             this.stopInterval();
+            // console.log("pause");
             this.startTimer=0;
         }
 
@@ -59,6 +69,7 @@ export class DialogComponent implements OnInit {
 
             this.stopInterval()
             this.startTimer = 0;
+            // console.log("reset");
         }
 
         timer(minute: number, second : number) : any{
@@ -83,7 +94,7 @@ export class DialogComponent implements OnInit {
             clearInterval(this.startTimer);
             
               }
-            return this.startTimer=0;  
+           
         }
 
         stopInterval(){
