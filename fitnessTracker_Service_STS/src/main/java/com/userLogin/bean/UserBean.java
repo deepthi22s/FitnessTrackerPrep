@@ -17,7 +17,7 @@ public class UserBean {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	Integer id;
 	String fullName;
-	Integer phoneNumber;
+	Long phoneNumber;
 	String password;
 	Integer height;
 	Double weight;
@@ -42,10 +42,11 @@ public class UserBean {
 	public void setFullName(String fullName) {
 		this.fullName = fullName;
 	}
-	public Integer getPhoneNumber() {
+	
+	public Long getPhoneNumber() {
 		return phoneNumber;
 	}
-	public void setPhoneNumber(Integer phoneNumber) {
+	public void setPhoneNumber(Long phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
 	public String getPassword() {

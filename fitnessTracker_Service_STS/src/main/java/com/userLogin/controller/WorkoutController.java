@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.userLogin.bean.WorkoutBean;
+import com.userLogin.service.WorkoutService;
 
 @RestController
 @RequestMapping("/workout")
@@ -18,11 +19,11 @@ public class WorkoutController {
 
 	
 	@Autowired
-	WorkoutController service;
+	WorkoutService service;
 	
 	
 	@PostMapping("/create")
-	public void create(@RequestBody WorkoutController workouts) { 
+	public void create(@RequestBody WorkoutBean workouts) { 
 		service.create(workouts);
 	}
 	
