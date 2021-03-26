@@ -83,7 +83,7 @@ export class DialogComponent implements OnInit {
             clearInterval(this.startTimer);
             
               }
-            return this.startTimer=0;  
+
         }
 
         stopInterval(){
