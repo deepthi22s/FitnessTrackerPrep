@@ -6,6 +6,7 @@ import { DietplanComponent } from './dietplan/dietplan.component';
 import { AppComponent } from './app.component';
 import { ModalComponent } from './modal/modal.component';
 import { LoginComponent } from './login/login.component';
+import { WorkoutComponent } from './workout/workout.component';
 
 
 
@@ -18,8 +19,8 @@ const routes: Routes = [
   {path : 'videostream', component : VideostreamComponent},
   {path : 'dietplan' , component : DietplanComponent},
   {path : 'modal', component : ModalComponent},
-  {path : 'login', component : LoginComponent}
-
+  {path : 'login', component : LoginComponent},
+  {path: 'show', component: WorkoutComponent }
 ];
 
 @NgModule({

@@ -24,7 +24,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     DietplanComponent,
     ModalComponent,
     DialogComponent,
-    LoginComponent 
+    LoginComponent,
+    WorkoutComponent
    ],
   imports: [
     BrowserModule,
