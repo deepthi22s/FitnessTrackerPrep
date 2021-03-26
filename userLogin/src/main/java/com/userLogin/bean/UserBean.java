@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.lang.Integer;
 
 
 import org.springframework.stereotype.Component;
@@ -22,6 +23,12 @@ public class UserBean {
 	Double weight;
 	Double bmi;
 	Integer yearsOfSubscription;
+	public UserBean(Integer id) {
+		this.id=id;
+	}
+	public UserBean() {
+		
+	}
 	public Integer getYearsOfSubscription() {
 		return yearsOfSubscription;
 	}
