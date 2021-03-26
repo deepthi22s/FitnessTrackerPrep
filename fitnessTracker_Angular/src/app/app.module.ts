@@ -13,6 +13,7 @@ import { DialogComponent } from './dialog/dialog.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LoginComponent } from './login/login.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { SignupComponent } from './signup/signup.component';
 
 
 
@@ -25,7 +26,11 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     ModalComponent,
     DialogComponent,
     LoginComponent,
+<<<<<<< HEAD
     WorkoutComponent
+=======
+    SignupComponent
+>>>>>>> 4b1bc7f0454e591a7303640ee92b578c904cc409
    ],
   imports: [
     BrowserModule,
