@@ -26,7 +26,11 @@ import { SignupComponent } from './signup/signup.component';
     ModalComponent,
     DialogComponent,
     LoginComponent,
+<<<<<<< HEAD
+    WorkoutComponent
+=======
     SignupComponent
+>>>>>>> 4b1bc7f0454e591a7303640ee92b578c904cc409
    ],
   imports: [
     BrowserModule,
