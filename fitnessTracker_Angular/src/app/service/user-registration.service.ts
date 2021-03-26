@@ -13,9 +13,9 @@ export class RegistrationService {
 
   public doRegistration(user){
 
-    // return this.http.get("http://localhost:8043/user/search/{}")
+    // return this.http.get("http://localhost:8080/user/search/{}")
     
-    return this.http.post("http://localhost:8043/user/create",user,{responseType:'text' as 'json'});
+    return this.http.post("http://localhost:8080/user/create",user,{responseType:'text' as 'json'});
 
 
     
