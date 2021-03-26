@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { compileDeclareComponentFromMetadata } from '@angular/compiler';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -8,39 +8,43 @@ import { compileDeclareComponentFromMetadata } from '@angular/compiler';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  [x: string]: any;
+  loginForm: FormGroup;
 
- @Input ('fullName') fullNameUser :any;
- @Input ('newPassword') newPassword: any;
+  @Input('fullNameUser') fullNameUser : string;
+  @Input('newPassword') newPassword: any;
  
-  responseDataFromfullName: object;
+  responseDataFromfullName: any;
 result :any;
+
   constructor(private httpClient : HttpClient) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(){
+  
+}
 
-  getUser(){
-    console.log(this.fullNameUser);
-    // Hit the URL to search User on
-    let responseUrl = this.httpClient.get("http://localhost:8080/user/create/" + this.fullNameUser);
+  
+ getUser():void{
+    console.log("full name :" + this.fullNameUser);
+    
+    let responseUrl = this.httpClient.get("http://localhost:8080/user/create/"+ this.fullNameUser);
 
     responseUrl.subscribe((responseData) => {
       this.responseDataFromfullName = responseData;
-      console.log(responseData);
-    });
-    console.log("comparing ..............");
-    this.compare(this.responseDataFromfullName);
+      console.log("response : " + this.responseDataFromfullName[0].password);
+      this.compare(this.responseDataFromfullName);
+      console.log(this.result);
+    });     
   }
 
- compare(responseDataFromfullName: any) {
-   console.log("compare..");
+  compare(responseDataFromfullName: any) :void{
+    console.log("inside compare, response : " + this.responseDataFromfullName[0].password);
      
-        if(responseDataFromfullName.newPassword==this.newPassword){
+        if(this.responseDataFromfullName[0].password==this.newPassword){
           this.result="User logged in successfully";
         }else{
           this.result="Invalid Password, Please try again..";
         }
-    
-}
+      
+  }
+
 }
