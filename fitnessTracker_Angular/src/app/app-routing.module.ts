@@ -8,6 +8,7 @@ import { ModalComponent } from './modal/modal.component';
 import { LoginComponent } from './login/login.component';
 import { WorkoutComponent } from './workout/workout.component';
 import { SignupComponent } from './signup/signup.component';
+
 import { GraphsComponent } from './graphs/graphs.component';
 
 
@@ -19,9 +20,10 @@ const routes: Routes = [
   {path : 'dietplan' , component : DietplanComponent},
   {path : 'modal', component : ModalComponent},
   {path : 'login', component : LoginComponent},
-  {path : 'graphs', component: GraphsComponent},
-  {path : 'signup', component : SignupComponent},
-  {path: 'show', component: WorkoutComponent }
+  {path: 'show', component: WorkoutComponent },
+  {path : 'signup', component: SignupComponent},
+  {path : 'workout', component: WorkoutComponent},
+  {path : 'graphs', component: GraphsComponent}
 
 ];
 

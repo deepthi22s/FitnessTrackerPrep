@@ -26,7 +26,7 @@ result :any;
  getUser():void{
     console.log("full name :" + this.fullNameUser);
     
-    let responseUrl = this.httpClient.get("http://localhost:8080/user/create/"+ this.fullNameUser);
+    let responseUrl = this.httpClient.get("http://localhost:8043/user/search/"+ this.fullNameUser);
 
     responseUrl.subscribe((responseData) => {
       this.responseDataFromfullName = responseData;
