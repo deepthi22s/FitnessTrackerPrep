@@ -6,14 +6,9 @@ import { DietplanComponent } from './dietplan/dietplan.component';
 import { AppComponent } from './app.component';
 import { ModalComponent } from './modal/modal.component';
 import { LoginComponent } from './login/login.component';
-<<<<<<< HEAD
 import { WorkoutComponent } from './workout/workout.component';
-=======
 import { SignupComponent } from './signup/signup.component';
->>>>>>> 4b1bc7f0454e591a7303640ee92b578c904cc409
-
-
-
+import { GraphsComponent } from './graphs/graphs.component';
 
 
 const routes: Routes = [
@@ -24,12 +19,10 @@ const routes: Routes = [
   {path : 'dietplan' , component : DietplanComponent},
   {path : 'modal', component : ModalComponent},
   {path : 'login', component : LoginComponent},
-<<<<<<< HEAD
+  {path : 'graphs', component: GraphsComponent},
+  {path : 'signup', component : SignupComponent},
   {path: 'show', component: WorkoutComponent }
-=======
-  {path : 'signup', component : SignupComponent}
 
->>>>>>> 4b1bc7f0454e591a7303640ee92b578c904cc409
 ];
 
 @NgModule({
