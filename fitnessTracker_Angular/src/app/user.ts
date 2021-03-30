@@ -1,14 +1,9 @@
 export class User{
-    constructor(
-    	id: number,
-        fullName:string,
-        phoneNumber :number,
-        password : string,
-        height : number,
-        weight : number,
-        bmi : number,
-        yearsOfSubscription : number
-      
-    ){}
-    
-    }
+	id: Number;
+	fullName: String;	
+	phoneNumber: Number;
+    password: String;
+	height: Number;
+	weight: Number;
+    bmi: Number;
+}
