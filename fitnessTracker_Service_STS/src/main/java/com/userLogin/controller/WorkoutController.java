@@ -22,7 +22,7 @@ public class WorkoutController {
 	WorkoutService service;
 	
 	
-	@PostMapping("/create")
+	@PostMapping("/create/show")
 	public void create(@RequestBody WorkoutBean workouts) { 
 		service.create(workouts);
 	}

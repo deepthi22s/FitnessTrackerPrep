@@ -19,7 +19,8 @@ public interface LogRepo extends CrudRepository<LogBean, Integer> {
 
 	List<LogBean> findByUserWorkoutId(Integer userWorkoutId);
 
-	List<LogBean> findByStart(Date start);
+	List<LogBean> findByStartAndUserId(Date start,Integer userId);
+
 
 //	 findByUserId(Integer userId);
 	
