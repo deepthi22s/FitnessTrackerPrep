@@ -1,6 +1,5 @@
 package com.userLogin.repo;
 
-
 import java.util.List;
 
 import org.springframework.data.jpa.repository.Query;
@@ -12,14 +11,10 @@ import com.userLogin.bean.UserBean;
 
 @Repository
 public interface UserRepo  extends CrudRepository<UserBean,Integer>{
-	
-	
-	
-	
-	
-	@Query(nativeQuery = true, value = "select phoneNumber from login")
-	public List<String> getAllPhoneNumbers();
-	
 	List<UserBean> findByFullName(String userName);
+	
 
+	@Query(nativeQuery = true, value = "select fullName from UserBean")
+	List<String> getOnlyUsers();
+	
 }

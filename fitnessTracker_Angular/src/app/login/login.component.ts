@@ -12,28 +12,62 @@ export class LoginComponent implements OnInit {
 
   @Input('fullNameUser') fullNameUser : string;
   @Input('newPassword') newPassword: any;
- 
+  flag:boolean=false;
   responseDataFromfullName: any;
-result :any;
+  result :any;
+  responseDataUsers: any;
+  flag1: any;
 
   constructor(private httpClient : HttpClient) { }
 
   ngOnInit(){
   
-}
-
+  }
   
- getUser():void{
-    console.log("full name :" + this.fullNameUser);
-    
-    let responseUrl = this.httpClient.get("http://localhost:8043/user/search/"+ this.fullNameUser);
+  getUsers(){
+    //console.log("Inside user.....");
+    let responseUrl = this.httpClient.get("http://localhost:8080/user/get");
 
     responseUrl.subscribe((responseData) => {
+      this.responseDataUsers = responseData;
+      //console.log(responseData);
+      this.flag1= this.compareUser(this.responseDataUsers, this.fullNameUser);
+      //console.log(this.flag1);
+      if(this.flag1==true){
+        // console.log("correct user....");
+        this.getPassword();
+      }else{
+        //  console.log("wrong user....");
+        this.result="Please try logging in with valid username....";
+      }
+    });  
+  }
+
+  getPassword():void{
+      console.log("full name :" + this.fullNameUser);
+      let responseUrl = this.httpClient.get("http://localhost:8080/user/create/"+ this.fullNameUser);
+      responseUrl.subscribe((responseData) => {
       this.responseDataFromfullName = responseData;
       console.log("response : " + this.responseDataFromfullName[0].password);
       this.compare(this.responseDataFromfullName);
       console.log(this.result);
-    });     
+      });     
+  }
+
+  compareUser(responseDataFromUser: any,fullname : any) :boolean{
+    // console.log(responseDataFromUser);
+    for(var item of responseDataFromUser){
+      // console.log(item);
+      // console.log(fullname);
+      if(item===fullname){
+        this.flag=true;
+        break;
+      }else{
+        this.flag=false;
+        console.log(this.flag);
+      }
+    }
+    return this.flag; 
   }
 
   compare(responseDataFromfullName: any) :void{
