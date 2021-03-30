@@ -8,7 +8,7 @@ import { ModalComponent } from './modal/modal.component';
 import { LoginComponent } from './login/login.component';
 import { WorkoutComponent } from './workout/workout.component';
 import { SignupComponent } from './signup/signup.component';
-
+import { WorkoutANDuserComponent } from './workout-anduser/workout-anduser.component';
 import { GraphsComponent } from './graphs/graphs.component';
 
 
@@ -23,7 +23,8 @@ const routes: Routes = [
   {path: 'show', component: WorkoutComponent },
   {path : 'signup', component: SignupComponent},
   {path : 'workout', component: WorkoutComponent},
-  {path : 'graphs', component: GraphsComponent}
+  {path : 'graphs', component: GraphsComponent},
+  {path: 'createWorkoutForUser', component: WorkoutANDuserComponent}
 
 ];
 

@@ -17,6 +17,7 @@ import { SignupComponent } from './signup/signup.component';
 import { WorkoutComponent } from './workout/workout.component';
 import { GraphsComponent } from './graphs/graphs.component';
 import { ChartsModule } from 'ng2-charts';
+import { WorkoutComponent } from './workout/workout.component';
 
 
 
@@ -32,7 +33,8 @@ import { ChartsModule } from 'ng2-charts';
     LoginComponent,
     WorkoutComponent,
     SignupComponent,
-    GraphsComponent
+    GraphsComponent,
+    WorkoutANDuserComponent
    ],
   imports: [
     BrowserModule,
