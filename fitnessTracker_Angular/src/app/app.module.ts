@@ -14,7 +14,10 @@ import { DialogComponent } from './dialog/dialog.component';
 import { LoginComponent } from './login/login.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { SignupComponent } from './signup/signup.component';
-import { WorkoutComponent} from './workout/workout.component'
+import { WorkoutComponent } from './workout/workout.component';
+import { GraphsComponent } from './graphs/graphs.component';
+import { ChartsModule } from 'ng2-charts';
+
 
 
 
@@ -27,15 +30,17 @@ import { WorkoutComponent} from './workout/workout.component'
     ModalComponent,
     DialogComponent,
     LoginComponent,
+    WorkoutComponent,
     SignupComponent,
-    WorkoutComponent
+    GraphsComponent
    ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-
-    HttpClientModule
+    NgbModule,
+    HttpClientModule,
+    ChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

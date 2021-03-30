@@ -9,8 +9,7 @@ import { LoginComponent } from './login/login.component';
 import { WorkoutComponent } from './workout/workout.component';
 import { SignupComponent } from './signup/signup.component';
 
-
-
+import { GraphsComponent } from './graphs/graphs.component';
 
 
 const routes: Routes = [
@@ -23,7 +22,9 @@ const routes: Routes = [
   {path : 'login', component : LoginComponent},
   {path: 'show', component: WorkoutComponent },
   {path : 'signup', component: SignupComponent},
-  {path : 'workout', component: WorkoutComponent}
+  {path : 'workout', component: WorkoutComponent},
+  {path : 'graphs', component: GraphsComponent}
+
 ];
 
 @NgModule({

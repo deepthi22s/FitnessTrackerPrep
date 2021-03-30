@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.userLogin.bean.LogBean;
+import com.userLogin.bean.UserBean;
 import com.userLogin.service.LogService;
 
 
@@ -23,11 +24,15 @@ public class LogController {
 //	@Autowired
 //	LogBean logBean;
 
-	@GetMapping("/date")
-	public List<LogBean> getEntryByDate(@RequestBody LogBean logBean) {
-		return service.getEntryByDate(logBean.getStart());
+	@GetMapping("/date/{id}")
+	public List<LogBean> getEntryByDate(@RequestBody LogBean logBean, @PathVariable Integer id) {
+		return service.getEntryByDate(logBean.getStart(),id);
 	}
 
+	@GetMapping("/fromTo/{id}")
+	public List<LogBean> getInfoFromTo(@RequestBody LogBean logBean, @PathVariable Integer id){
+		return service.getInfoFromTo(logBean,id);
+	}
 	@PostMapping("/addEntry/{userWorkoutId}")
 	public LogBean addEntryToLog(@PathVariable Integer userWorkoutId, @RequestBody LogBean logBean) {
 		return service.addEntryToLog(logBean);
