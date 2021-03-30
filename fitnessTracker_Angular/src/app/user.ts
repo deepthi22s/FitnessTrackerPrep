@@ -1,5 +1,6 @@
-export class user{
+export class User{
     constructor(
+    	id: number,
         fullName:string,
         phoneNumber :number,
         password : string,
