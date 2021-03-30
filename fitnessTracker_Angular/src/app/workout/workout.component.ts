@@ -30,7 +30,7 @@ export class WorkoutComponent implements OnInit {
     let responseDataBack =  this.theWorkoutValue.searchOnWorkout(this.sWorkout);
     
     responseDataBack.subscribe((responseData) =>{
-      this.sWorkout=responseData;
+    //this.sWorkout=responseData;
       console.log(responseData);  
       this.flag = true;    
     });

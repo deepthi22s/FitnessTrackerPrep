@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { User } from '../User';
 import { UserWorkout } from '../UserWorkout';
 import { WorkoutANDuserService } from '../workout-anduser.service';
 
@@ -8,7 +9,9 @@ import { WorkoutANDuserService } from '../workout-anduser.service';
   styleUrls: ['./workout-anduser.component.css']
 })
 export class WorkoutANDuserComponent implements OnInit {
+  
 
+  user: User = new User();
   sWorkout: UserWorkout = new UserWorkout();
   idWorkout: UserWorkout = new UserWorkout();
   cWorkout: UserWorkout = new UserWorkout();
@@ -17,6 +20,7 @@ export class WorkoutANDuserComponent implements OnInit {
 
   flag: boolean = false;
   addFlag: boolean = false;
+  value: any;
 
   constructor(private theWorkoutValue: WorkoutANDuserService) { }
 
@@ -39,10 +43,11 @@ export class WorkoutANDuserComponent implements OnInit {
 
   //GET By ID
   searchOnWorkoutById(){
-    let responseDataBack =  this.theWorkoutValue.searchOnWorkoutById(this.idWorkout);
+    
+    let responseDataBack =  this.theWorkoutValue.searchOnWorkoutById(this.user.id);
     
     responseDataBack.subscribe((responseData) =>{
-      this.idWorkout=responseData;
+      this.value=responseData;
       console.log(responseData);  
       this.flag = true;    
     });
@@ -50,7 +55,8 @@ export class WorkoutANDuserComponent implements OnInit {
 
   //POST Method
   addNewWorkout(){
-    let responseDataBack =  this.theWorkoutValue.addNewWorkout(this.cWorkout);
+  
+    let responseDataBack =  this.theWorkoutValue.addNewWorkout(this.cWorkout, this.user.id);
     
     responseDataBack.subscribe((responseData) =>{
       console.log("New Workout Added...");      
@@ -60,7 +66,7 @@ export class WorkoutANDuserComponent implements OnInit {
 
   //PUT Method
   updateWorkout(){
-    let responseDataBack =  this.theWorkoutValue.updateWorkout(this.uWorkout);
+    let responseDataBack =  this.theWorkoutValue.updateWorkout(this.uWorkout, this.user.id);
     
     responseDataBack.subscribe((responseData) =>{
       console.log("Workout Updated...");

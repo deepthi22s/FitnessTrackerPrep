@@ -31,8 +31,8 @@ public class UserWorkoutController {
 	}
 	
 	@PutMapping("/updateWorkout/{idOfUser}")
-	public void updateUserWorkoutDetailsById(@RequestBody UserWorkoutBean workout, @PathVariable Integer idOfUser) {
-		workout.setUserWorkoutId(idOfUser);
+	public void updateUserWorkoutDetailsById(@RequestBody UserWorkoutBean workout, @PathVariable UserBean idOfUser) {
+		workout.setUser(idOfUser);
 		service.updateUserWorkoutDetailsById(workout);
 	}
 	

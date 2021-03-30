@@ -15,16 +15,17 @@
 
 <!--Get a Workout Data Of Single User-->
 <h2>Get Details of User All Workouts</h2>
-<form>
-    <input type="number" name="user_id" placeholder="User ID" [(ngModel)] = "idWorkout.user_id"><br>
-
-    <button (click) = "searchOnWorkoutById()" class="bg-success">All Workout Details</button>
+<form action="submit" method="GET">
+    <input type="number" name="id" placeholder="User ID" [(ngModel)] = "user.id"><br>
+    
+   <button (click) = "searchOnWorkoutById()" class="bg-success">All Workout Details</button>
     <div *ngIf="flag">
-        <div *ngFor="let workout of idWorkout">
+        <div *ngFor="let workout of value">
+            <h1>User ID: {{user.id}}</h1>
             <h1>Name of Workout: {{workout.workoutName}}</h1><br>
             <h1>Workout ID: {{workout.userWorkoutId}}</h1><br>
             <h1>Workout Time: {{workout.workoutTime}}</h1><br>
-            <h1>Calories Burned: {{workout.caloriesBurnedByUser}}</h1>                    
+            <h1>Calories Burned: {{workout.caloriesBurnedByUser}}</h1><br>                  
         </div>
     </div>
 </form>
@@ -33,13 +34,15 @@
 <!--Creating a Workout Entry For User-->
 <div>
     <h1>Create a Workout For Excercise</h1>
-    
+        
         <form>
+            User Id<input type="number" name="id" placeholder="user Id" [(ngModel)] = "user.id">
             Workout Name<input type="string" name="workoutName" placeholder="Workout Name" [(ngModel)] = "cWorkout.workoutName"><br>
             Workout Time<input type="number" name="workoutTime" placeholder="Workout Time" [(ngModel)] = "cWorkout.workoutTime"><br>
             
             <button (click)="addNewWorkout()">Add Workout</button> 
         </form>
+        
 </div>
 
 <!--updating Workout For User-->
@@ -47,6 +50,7 @@
     <h1>Update a New Workout</h1>
 
     <form>
+        User Id<input type="number" name="id" placeholder="user Id" [(ngModel)] = "user.id">
         Workout Name<input type="string" name="workoutName" placeholder="Workout Name" [(ngModel)] = "uWorkout.workoutName"><br>
         Workout Time<input type="number" name="workoutTime" placeholder="Workout Time" [(ngModel)] = "uWorkout.workoutTime"><br> 
         <button (click)="updateWorkout()">Update Workout</button> 
@@ -57,6 +61,6 @@
 <h1>Delete a Workout</h1>
 
 <form>
-Workout Name<input type="text" name="workoutName" placeholder="Workout Name to Delete" [(ngModel)] = "dWorkout.workoutName"/><br>
+Workout ID<input type="text" name="userWorkoutId" placeholder="Workout Id to Delete" [(ngModel)] = "dWorkout.userWorkoutId"/><br>
 <button (click) = "deleteWorkout()">Delete Workout</button>
 </form>

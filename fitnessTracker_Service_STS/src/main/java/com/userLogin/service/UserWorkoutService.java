@@ -36,8 +36,8 @@ public class UserWorkoutService {
 		return( List<UserWorkoutBean>) repo.findByUserId(userWorkoutId);
 	}
 
-	public void delete(Integer userWorkoutId) {
-		repo.deleteById(userWorkoutId);		
+	public void delete(Integer userOfId) {
+		repo.deleteById(userOfId);		
 	}
 
 //	public void calculateCalories(UserWorkoutBean user, WorkoutBean workout) {
