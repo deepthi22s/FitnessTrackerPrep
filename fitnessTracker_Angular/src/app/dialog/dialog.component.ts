@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, SimpleChange } from '@angular/core';
-import { NgbActiveModal, NgbTimepickerI18n } from '@ng-bootstrap/ng-bootstrap';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-dialog',
@@ -29,37 +29,25 @@ export class DialogComponent implements OnInit {
             this.Time=props.Time ;    
             this.title=props.title || null;
             this.body=props.body|| null;
-            // console.log(this.Name);
-            // console.log(this.Time);
             this.minutes=this.Time;
             this.startTimer=0;
             //console.log(this.startTimer);
         }
 
-        // count(){
-            
-        // //console.log(this.minutes);
-        // // console.log(this.minutes);
-        // // console.log("console..");
-        // // console.log(this.seconds);
-        // // this.startTimer=0;
-        // // console.log("HTML..");
-      
-        // }
-
-    start(){
-        if(this.startTimer == 0){
-              console.log("startTimer..");
-              //console.log(this.startTimer);
-              this.startTimer = setInterval(()=>{this.timer(this.minutes, this.seconds);},1000)  
-        } else {
-            alert("Timer is already running");
-        }
-    }
+      start(){
+          if(this.startTimer === 0){
+                console.log("startTimer..");
+                //console.log(this.startTimer);
+                
+              this.startTimer = setInterval(()=>{this.timer(this.minutes, this.seconds);},1000)
+              
+          } else {
+              alert("Timer is already running");
+          }
+      }
 
         pause(){
             this.stopInterval();
-            // console.log("pause");
             this.startTimer=0;
         }
 
@@ -69,14 +57,9 @@ export class DialogComponent implements OnInit {
 
             this.stopInterval()
             this.startTimer = 0;
-            // console.log("reset");
         }
 
         timer(minute: number, second : number) : any{
-              // console.log(minute);
-              // console.log(second);
-              //console.log(this.startTimer);
-              // console.log("TIMER...");
                 if(second != 0){
                   second--;
                 this.seconds=second;
