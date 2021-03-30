@@ -1,5 +1,4 @@
 package com.userLogin.service;
-
 import java.util.List;
 import java.util.Optional;
 
@@ -12,52 +11,36 @@ import com.userLogin.repo.UserRepo;
 
 @Service
 public class UserService {
-
-
+	
  @Autowired
  UserRepo repo;
-
  
- public boolean create(UserBean userbean) {
-	  
-	  boolean isPhoneNumberUsed = this.searchForPhoneNumber(userbean.getPhoneNumber());
-	  if(!isPhoneNumberUsed) {
-		Integer h= userbean.getHeight();
-	Double w= userbean.getWeight();
-	Double b=(100*100*w)/(h*h);
-	userbean.setBmi(b);	
-	 repo.save(userbean);
+  public void create(UserBean user) {
+	 Integer height1= user.getHeight();
+	 //double h=h/100;
+	 Double weight1= user.getWeight();
+	 Double bmi1=(100*100*weight1)/(height1*height1);
+	 user.setBmi(bmi1);
+	 repo.save(user);
 	  }
-	  System.out.println("PhoneNumber already used");
-	 return isPhoneNumberUsed;
-}
-
- public boolean searchForPhoneNumber(String phoneNumber) {
-	  boolean isPhoneNumberUsed = false;
-	  List<String> listOfPhoneNumbers = repo.getAllPhoneNumbers();
-
-	for(String  phoneNumberr : listOfPhoneNumbers) {
-		if(phoneNumberr.equals(phoneNumber)) {
-			isPhoneNumberUsed = true;
-		}
-	}
-	 
-	return isPhoneNumberUsed;
-	
-}
+  
    public void update(UserBean bean,int id) {
-	   bean.setId(id);
 	 repo.save(bean);
  }
   public List<UserBean> getDeatilsByname(String username) {
 	 return (List<UserBean>) repo.findByFullName(username);
 }
 
+public List<UserBean> getAllUsers() {
+	// TODO Auto-generated method stub
+	return (List<UserBean>) repo.findAll();
 }
 
-
-
-
-
+public List<String> getDetailsOfUsers() {
+	// TODO Auto-generated method stub
+	return (List<String>) repo.getOnlyUsers();
+}
+    
+}
 
 

@@ -5,51 +5,38 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Table;
-
-import java.lang.Integer;
 
 
 import org.springframework.stereotype.Component;
 @Entity
 @Component
-
-@Table(name="Login")
 public class UserBean {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	Integer id;
 	String fullName;
-	String phoneNumber;
+	Integer phoneNumber;
 	String password;
 	Integer height;
 	Double weight;
 	Double bmi;
 	Integer yearsOfSubscription;
-	public UserBean(Integer id) {
-		this.id=id;
-	}
-	public UserBean() {
-		
-	}
 	public Integer getYearsOfSubscription() {
 		return yearsOfSubscription;
 	}
 	public void setYearsOfSubscription(Integer yearsOfSubscription) {
 		this.yearsOfSubscription = yearsOfSubscription;
 	}
-
 	public String getFullName() {
 		return fullName;
 	}
 	public void setFullName(String fullName) {
 		this.fullName = fullName;
 	}
-	
-	public String getPhoneNumber() {
+	public Integer getPhoneNumber() {
 		return phoneNumber;
 	}
-	public void setPhoneNumber(String phoneNumber) {
+	public void setPhoneNumber(Integer phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
 	public String getPassword() {
