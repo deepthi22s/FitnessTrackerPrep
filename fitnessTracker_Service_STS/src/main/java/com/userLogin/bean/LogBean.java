@@ -8,7 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-
+import javax.persistence.Transient;
 
 import org.springframework.stereotype.Component;
 
@@ -29,7 +29,26 @@ public class LogBean {
 	Integer userWorkoutId;
 	Integer caloriesBurnedByUser;
 	Integer workoutTime;
+	@Transient
+	@JsonFormat(pattern = "yyyy-MM-dd")
+	Date from;
+	
+	@Transient
+	@JsonFormat(pattern = "yyyy-MM-dd")
+	Date to;
 
+	public Date getFrom() {
+		return from;
+	}
+	public void setFrom(Date from) {
+		this.from = from;
+	}
+	public Date getTo() {
+		return to;
+	}
+	public void setTo(Date to) {
+		this.to = to;
+	}
 	public Integer getNum() {
 		return num;
 	}

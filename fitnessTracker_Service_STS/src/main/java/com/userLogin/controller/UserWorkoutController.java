@@ -41,9 +41,9 @@ public class UserWorkoutController {
 		return service.getAllUserWorkoutDetails();
 	}
 	
-	@GetMapping("/{userWorkoutId}")
-	public List<UserWorkoutBean> getUserWorkoutDetails(@PathVariable Integer userWorkoutId) {
-		return service.getUserWorkoutDetails(userWorkoutId);
+	@GetMapping("/{userId}")
+	public List<UserWorkoutBean> getUserWorkoutDetails(@PathVariable Integer userId) {
+		return service.getUserWorkoutDetails(userId);
 	}
 	
 	@DeleteMapping("/delete/{userWorkoutId}")
