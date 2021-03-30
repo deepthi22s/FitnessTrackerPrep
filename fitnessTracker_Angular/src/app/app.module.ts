@@ -14,6 +14,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LoginComponent } from './login/login.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { SignupComponent } from './signup/signup.component';
+import { WorkoutComponent } from './workout/workout.component';
+import { GraphsComponent } from './graphs/graphs.component';
+import { ChartsModule } from 'ng2-charts';
 
 
 
@@ -26,18 +29,17 @@ import { SignupComponent } from './signup/signup.component';
     ModalComponent,
     DialogComponent,
     LoginComponent,
-<<<<<<< HEAD
-    WorkoutComponent
-=======
-    SignupComponent
->>>>>>> 4b1bc7f0454e591a7303640ee92b578c904cc409
+    WorkoutComponent,
+    SignupComponent,
+    GraphsComponent
    ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     NgbModule,
-    HttpClientModule
+    HttpClientModule,
+    ChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
