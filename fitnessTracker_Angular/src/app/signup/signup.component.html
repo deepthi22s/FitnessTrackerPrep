@@ -4,20 +4,13 @@
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <meta charset = "UTF-8" />
 
-
-<!-- <div class="sidenav">
-  <div class="login-main-text">
-     <h1>Put Your<br>Creative Energy<br>to work, with<br>Dropbox</h1>
-     <p>Drop box is modern workspace designed<br> to reduce busywork-so you can focus on<br> the things matter</p>
-  </div>
-</div> -->
-
 <div class="container">
 <div class="row">
     <div class="col-md-6">
-
+     
      <form  (ngSubmit)="registerNow()" #myForm="ngForm">
-
+        <p>{{notifyMessage}}</p>
+        
         <div class="form-group">
             <label for="fullName"> FullName</label>
             <input 
@@ -35,14 +28,14 @@
             >
             <div class="alert alert-danger" *ngIf="fullName.touched && !fullName.valid">
                 <div *ngIf="fullName.errors.required">*required</div>
-                <!-- <div *ngIf="fullName.errors.minlength">Name should be atleast of 5 characters</div>
-                <div *ngIf="fullName.errors.maxlength">Name should be atleast of 15 in length</div> -->
+                <div *ngIf="fullName.errors.minlength">Name should be atleast of 5 characters</div>
+                <div *ngIf="fullName.errors.maxlength">Name should be atleast of 15 in length</div>
                 <div *ngIf="fullName.errors.pattern">Should match the pre-defined pattern</div>
               </div>
             </div> 
 
             <div class="form-group">
-              <label for="phoneNumber"> phoneNumber</label>
+              <label for="phoneNumber"> PhoneNumber</label>
               <input 
               type="number"
               id="phoneNumber" 
@@ -50,7 +43,7 @@
               placeholder="Enter your PhoneNumber"
               required 
               maxlength="10"
-              pattern="{3,7}"
+              
               ngModel name="phoneNumber"
               #phoneNumber = "ngModel"
               [(ngModel)]="user.phoneNumber" 
@@ -63,7 +56,7 @@
                 </div>
               </div>   
               <div class="form-group">
-                <label for="password"> password</label>
+                <label for="password"> Password</label>
                 <input 
                 type="password"
                 id="password" 
@@ -90,7 +83,7 @@
                   placeholder="Enter your Height"
                   required 
                   maxlength="4"
-                  pattern="{1,10}"
+                  
                   ngModel name="height"
                   #height = "ngModel"
                   [(ngModel)]="user.height" 
@@ -111,7 +104,7 @@
                     placeholder="Enter your Weight"
                     required 
                     maxlength="4"
-                    pattern="{1,10}"
+                   
                     ngModel name="weight"
                     #weight = "ngModel"
                     [(ngModel)]="user.weight" 
@@ -124,14 +117,14 @@
                       </div>
                     </div>                      
                     <div class="form-group">
-                      <label for="bmi">Your Bmi</label>
+                      <label for="bmi">Your Bmi(Optional)</label>
                       <input 
                       type="number"
                       id="bmi" 
                       class="form-control" 
                       placeholder="Enter your bmi"
                       maxlength="3"
-                      pattern="{1,10}"
+                     
                       ngModel name="bmi"
                       #bmi = "ngModel"
                       [(ngModel)]="user.bmi" 
@@ -142,27 +135,22 @@
                           <div *ngIf="bmi.errors.pattern">Should match the pre-defined pattern</div>
                         </div>
                       </div>                   
-                      <div class="form-group">
-                        <label for="yearsOfSubscription">Enter Years of Subscription</label>
-                        <input 
-                        type="number"
-                        id="yearsOfSubscription" 
-                        class="form-control" 
-                        placeholder="Enter number of years"
-                        pattern="{1,10}"
-                        ngModel name="yearsOfSubscription"
-                        #yearsOfSubscription = "ngModel"
-                        [(ngModel)]="user.yearsOfSubscription" 
-                        name="yearsOfSubscription"
-                        >
-                        <div class="alert alert-danger" *ngIf="yearsOfSubscription.touched && !yearsOfSubscription.valid">
-                            <div *ngIf="yearsOfSubscription.errors.pattern">Should match the pre-defined pattern</div>
-                          </div>
-                        </div>                       
-                <button type="submit"  class="btn btn-success" [disabled]="!myForm.form.valid">Register</button>                 
-                <a href="http://localhost:4200/payment"   type="submit" name="submit_reg"  class="btn btn-success" role="button" style="margin-left:50px">PAY</a>
+                     
+                        <div class="form-group">
+                        <label for="yearsOfSubscription">Choose Years of Subscription(Optional)</label> <br>
+                        <select name="yearsOfSubscription" id="yearsOfSubscription"[(ngModel)]="user.yearsOfSubscription" >
+                          <option value="" disabled selected>Select your option</option>
+                          <option value="1">1 year(₹300/-)</option>
+                          <option value="2">2 years(₹550/-)</option>
+                          
+                        </select>
+                      </div>
+
+
+                <button type="submit"  class="btn btn-success" [disabled]="!myForm.form.valid">Register</button>   
+                <a href="http://localhost:4200/payment"   type="submit" name="submit_reg"  class="btn btn-success" role="button" style="margin-left:50px">PAY</a>  
             </form>
+            </div>
     </div>
-</div>
 </div>
 

@@ -18,16 +18,33 @@ public class UserService {
  UserRepo repo;
 
  
-  public void create(UserBean user) {
-	 Integer h= user.getHeight();
-	 //double h=h/100;
-	 Double w= user.getWeight();
-	 Double b=(100*100*w)/(h*h);
-	 user.setBmi(b);
-	 repo.save(user);
+ public boolean create(UserBean userbean) {
+	  
+	  boolean isPhoneNumberUsed = this.searchForPhoneNumber(userbean.getPhoneNumber());
+	  if(!isPhoneNumberUsed) {
+		Integer h= userbean.getHeight();
+	Double w= userbean.getWeight();
+	Double b=(100*100*w)/(h*h);
+	userbean.setBmi(b);	
+	 repo.save(userbean);
 	  }
-  
+	  System.out.println("PhoneNumber already used");
+	 return isPhoneNumberUsed;
+}
 
+ public boolean searchForPhoneNumber(String phoneNumber) {
+	  boolean isPhoneNumberUsed = false;
+	  List<String> listOfPhoneNumbers = repo.getAllPhoneNumbers();
+
+	for(String  phoneNumberr : listOfPhoneNumbers) {
+		if(phoneNumberr.equals(phoneNumber)) {
+			isPhoneNumberUsed = true;
+		}
+	}
+	 
+	return isPhoneNumberUsed;
+	
+}
    public void update(UserBean bean,int id) {
 	   bean.setId(id);
 	 repo.save(bean);
@@ -37,5 +54,10 @@ public class UserService {
 }
 
 }
+
+
+
+
+
 
 

@@ -7,7 +7,7 @@ export class user{
         weight : number,
         bmi : number,
         yearsOfSubscription : number
-      
+    
     ){}
     
     }

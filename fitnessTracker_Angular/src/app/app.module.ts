@@ -10,10 +10,11 @@ import { DietplanComponent } from './dietplan/dietplan.component';
 import { FormsModule, NgModel } from '@angular/forms';
 import { ModalComponent } from './modal/modal.component';
 import { DialogComponent } from './dialog/dialog.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 import { LoginComponent } from './login/login.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { SignupComponent } from './signup/signup.component';
+import { WorkoutComponent} from './workout/workout.component'
 
 
 
@@ -26,17 +27,14 @@ import { SignupComponent } from './signup/signup.component';
     ModalComponent,
     DialogComponent,
     LoginComponent,
-<<<<<<< HEAD
+    SignupComponent,
     WorkoutComponent
-=======
-    SignupComponent
->>>>>>> 4b1bc7f0454e591a7303640ee92b578c904cc409
    ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    NgbModule,
+
     HttpClientModule
   ],
   providers: [],

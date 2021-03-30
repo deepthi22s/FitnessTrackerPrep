@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
+
 import java.lang.Integer;
 
 
@@ -12,12 +14,13 @@ import org.springframework.stereotype.Component;
 @Entity
 @Component
 
+@Table(name="Login")
 public class UserBean {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	Integer id;
 	String fullName;
-	Long phoneNumber;
+	String phoneNumber;
 	String password;
 	Integer height;
 	Double weight;
@@ -43,10 +46,10 @@ public class UserBean {
 		this.fullName = fullName;
 	}
 	
-	public Long getPhoneNumber() {
+	public String getPhoneNumber() {
 		return phoneNumber;
 	}
-	public void setPhoneNumber(Long phoneNumber) {
+	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
 	public String getPassword() {
