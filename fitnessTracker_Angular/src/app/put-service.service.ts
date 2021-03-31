@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { WorkoutTime } from './WorkoutTime';
+import { UserWorkout } from './UserWorkout';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +13,7 @@ export class PutServiceService {
     // console.log(theWorkoutTime.workoutId);
     // console.log(theWorkoutTime);
     // console.log(theWorkoutTime.id);
-    return this.httpClient.put<WorkoutTime>("http://localhost:8083/workoutTime/workoutTime/"+theWorkoutTime.id,theWorkoutTime, theWorkoutTime.id);
+    return this.httpClient.put<UserWorkout>("http://localhost:8080/workout/workoutTime/"+theWorkoutTime.id,theWorkoutTime, theWorkoutTime.id);
     
   }
 }

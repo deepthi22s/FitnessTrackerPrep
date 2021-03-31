@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, Input, OnInit } from '@angular/core';
 import { DialogServiceService } from '../dialog/dialog-service.service';
 import { PutServiceService } from '../put-service.service';
-import { WorkoutTime } from '../WorkoutTime';
+import { UserWorkout } from '../UserWorkout';
 
 @Component({
   selector: 'app-modal',
@@ -16,7 +16,7 @@ export class ModalComponent implements OnInit {
   flag:any;
 
   @Input('workoutTime') workoutTime :any ;
-  theWorkout : WorkoutTime = new WorkoutTime();
+  theWorkout : UserWorkout = new UserWorkout();
 
   title = 'Modal';
   responseWorkout: any;
@@ -34,7 +34,7 @@ export class ModalComponent implements OnInit {
     this.dialogService.openDialog(
       {
         Name : this.outputWorkout.workoutName,
-        Time : this.outputWorkout.time,
+        Time : this.outputWorkout.workoutTime,
         
         title: "Workout Timer",
         body: "This is some body text"
@@ -47,14 +47,14 @@ export class ModalComponent implements OnInit {
     }
     );
     this.flag="Done :) :)";
-
+    console.log(this.outputWorkout.workoutName);
     this.getWorkout(this.outputWorkout.workoutName);
   }
  
 
  getWorkout(workoutName: any) : any{
-  console.log(workoutName);
-  let responseUrl = this.httpClient.get("http://localhost:8083/workoutBean/workout/" + workoutName);
+  // console.log(workoutName);
+  let responseUrl = this.httpClient.get("http://localhost:8080/workout/workout/" + workoutName);
     responseUrl.subscribe((responseData) => {
     this.responseWorkout = responseData;
     this.count=this.responseWorkout.averageCalorieBurn;

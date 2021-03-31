@@ -6,4 +6,5 @@ export class User{
 	height: Number;
 	weight: Number;
     bmi: Number;
+	yearsOfSubscription: Number;
 }

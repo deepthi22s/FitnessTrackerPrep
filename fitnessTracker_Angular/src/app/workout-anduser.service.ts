@@ -13,25 +13,25 @@ export class WorkoutANDuserService {
 
   searchOnWorkout(sWorkout) {
     sWorkout = "show";
-    return this.httpClient.get<UserWorkout>("http://localhost:9092/user/"+ sWorkout);
+    return this.httpClient.get<UserWorkout>("http://localhost:8080/user/"+ sWorkout);
   }
 
   searchOnWorkoutById(idWorkout) {
-    return this.httpClient.get<UserWorkout>("http://localhost:9092/user/"+ idWorkout);
+    return this.httpClient.get<UserWorkout>("http://localhost:8080/user/"+ idWorkout);
   }
 
   //POST Method
-  addNewWorkout(cWorkout) {
-    return this.httpClient.post<UserWorkout>("http://localhost:9092/user/create/", cWorkout);
+  addNewWorkout(cWorkout,id) {
+    return this.httpClient.post<UserWorkout>("http://localhost:8080/user/create/"+id, cWorkout);
   }
 
   //PUT Method
-  updateWorkout(uWorkout) {
-    return this.httpClient.put<UserWorkout>("http://localhost:9092/user/updateWorkout/", uWorkout);
+  updateWorkout(uWorkout,id) {
+    return this.httpClient.put<UserWorkout>("http://localhost:8080/user/updateWorkout/"+id, uWorkout);
   }
 
   // //DELETE Method
   deleteWorkout(dWorkout) {
-    return this.httpClient.delete<UserWorkout>("http://localhost:9092/user/delete/"+dWorkout.workoutName);
+    return this.httpClient.delete<UserWorkout>("http://localhost:8080/user/delete/"+dWorkout.workoutName);
   }
 }

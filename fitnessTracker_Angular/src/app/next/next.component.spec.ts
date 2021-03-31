@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LoginCopyComponent } from './login-Copy.component';
+import { NextComponent } from './next.component';
 
-describe('LoginCopyComponent', () => {
-  let component: LoginCopyComponent;
-  let fixture: ComponentFixture<LoginCopyComponent>;
+describe('NextComponent', () => {
+  let component: NextComponent;
+  let fixture: ComponentFixture<NextComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LoginCopyComponent ]
+      declarations: [ NextComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LoginCopyComponent);
+    fixture = TestBed.createComponent(NextComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

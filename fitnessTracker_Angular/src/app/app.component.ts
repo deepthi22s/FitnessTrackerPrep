@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {render} from 'creditcardpayments/creditcardpayments';
+import { User } from './User';
 
 @Component({
   selector: 'app-root',
@@ -10,18 +11,6 @@ export class AppComponent {
 
   title = 'WorkoutTrackerUi';
 
-  constructor(){
-    render(
-      {
-        id :"#myPaypalButtons",
-        currency :"INR",
-
-        value : "1",
-        onApprove: (details) => {
-          alert("Transaction Successful");
-
-        }
-      }
-    );
-  }
+ 
+  user: User=new User();
 }

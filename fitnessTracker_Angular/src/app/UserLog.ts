@@ -1,9 +1,9 @@
-import { user } from "./user";
+import { User } from "./User";
 
 export class UserLog{
     
 	num: number;
-	user: user;
+	user: User;
 	start: Date;
 	userWorkoutId: number;
     caloriesBurnedByUser: number;

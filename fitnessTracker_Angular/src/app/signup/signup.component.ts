@@ -1,6 +1,7 @@
 import { Component, OnInit, Input} from '@angular/core';
-import { user } from '../service/user';
+
 import { HttpClient } from '@angular/common/http'; 
+import { User } from '../User';
 
 
 @Component({
@@ -10,7 +11,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class SignupComponent implements OnInit {
 
-  user: user=new user("",0 , "", 0, 0, 0,0);
+  user: User=new User();
   message:any;
   count : number=0;
   notifyMessage : String;

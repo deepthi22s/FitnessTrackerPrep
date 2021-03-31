@@ -10,6 +10,7 @@ import { WorkoutComponent } from './workout/workout.component';
 import { SignupComponent } from './signup/signup.component';
 import { WorkoutANDuserComponent } from './workout-anduser/workout-anduser.component';
 import { GraphsComponent } from './graphs/graphs.component';
+import { GetDataComponent } from './get-data/get-data.component';
 
 
 const routes: Routes = [
@@ -18,7 +19,7 @@ const routes: Routes = [
   {path :'payment', component : PaymentComponent},
   {path : 'videostream', component : VideostreamComponent},
   {path : 'dietplan' , component : DietplanComponent},
-  {path : 'modal', component : ModalComponent},
+  {path : 'modal', component : GetDataComponent},
   {path : 'login', component : LoginComponent},
   {path: 'show', component: WorkoutComponent },
   {path : 'signup', component: SignupComponent},
